@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <limits.h>
-#define M 5 /* Число строк матрицы */
-#define N 10 /* Число столбцов матрицы */
+#define M 5
+#define N 10
 
 int main()
 {
@@ -15,7 +15,7 @@ int main()
 
   for(i = 0; i < M; i++) {
      for(j = 0; j < N; j++) {
-        a[i][j] = rand()%100; /*заполнение и вывод массива*/
+        a[i][j] = rand()%100;
         printf("%5d", a[i][j]);}
      printf("\n");
   }
@@ -36,19 +36,14 @@ int main()
          if (t[j]<t[j+1])
             b[i]=t[j+1];
      }
-     printf("%d ", b[i]);
   }
-
-  printf("\n");
-  printf("\n");
-  y=0;
 
   for (j=M-1; j>=0; j--)
   {
    if (b[j]>y)
         y=b[j];
   }
-  printf("\n%d", y);
 
+  printf("\n%d", y);
   return 0;
 }
