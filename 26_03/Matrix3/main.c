@@ -41,9 +41,14 @@ int main()
 
   printf("\n");
   printf("\n");
+  y=0;
 
-
-   printf("\n%d", y);
+  for (j=M-1; j>=0; j--)
+  {
+   if (b[j]>y)
+        y=b[j];
+  }
+  printf("\n%d", y);
 
   return 0;
 }
