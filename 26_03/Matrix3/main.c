@@ -43,6 +43,14 @@ int main()
   printf("\n");
 
 
+  for(i = 0; i <M-1; i++)
+  {
+      if (b[i]<b[i+1]) {
+      y=i+1;
+      printf("%d ", y);}
+
+  }
+
    printf("\n%d", y);
 
   return 0;
