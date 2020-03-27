@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1585304207 source:c:\users\user\my_project\my_c\26_03\matrix4\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<limits.h>
+
