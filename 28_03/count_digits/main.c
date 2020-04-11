@@ -10,7 +10,7 @@
 int count_digits (char *s, int *p)
 {
     int i;
-    for (i=0; i<strlen(s); i++)
+    for (i=0; i<sizeof(s); i++)
     {
         if ((int) s[i]<=57)
             if ((int) s[i]>=48)

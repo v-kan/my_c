@@ -6,13 +6,13 @@
     char *str_chr (char *s, char c)
 */
 
-int str_chr (char s[], int x)
+int str_chr (char *s, char *c)
 {
     int i;
     int *y=0;
 
-    for (i=0; i<sizeof(s); i++)
-        if (((int)s[i])==x)
+    for (i=0; i<strlen(s); i++)
+        if ((int) *c==((int) s[i]))
         {
             y=&s[i];
             break;
@@ -23,16 +23,13 @@ int str_chr (char s[], int x)
 
 int main()
 {
-    char str[100000];
-    char sym[1];
+    char str[10];
+    char sym[2];
     int t;
 
-    scanf ("%s", sym);
-    t=(int)*sym;
+    scanf ("%9s %9s", str, sym);
 
-    scanf ("%s", str);
-
-    printf("%d\n", str_chr(str, t));
+    printf("%d\n", str_chr(str, &sym));
 
     return 0;
 }
