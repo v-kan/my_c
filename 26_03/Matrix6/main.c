@@ -25,14 +25,31 @@ int main()
         for (k=1; k<=(M-1-i); k++)
             for (j=0; j<N; j++)
             {
-                if ((a[i][j]==a[i+k][j]) && (j==N-1))
+                /*if ((a[i][j]==a[i+k][j]) && (j==N-1))
                 {
                     printf ("\nTrue");
                     return;
                 }
                 if (a[i][j]!=a[i+k][j])
+                break;*/
+
+                /* */
+
+                if (a[i][j]==a[i+k][j])
+                {
+                    printf ("\n%d=%d ", a[i][j], a[i+k][j]);
+                    if (j==N-1)
+                    {
+                        printf ("kakogo huya ");
+                        printf ("\nTrue");
+                        return;
+                    }
+                }
                 break;
+
+
             }
+
 
     return 0;
 }

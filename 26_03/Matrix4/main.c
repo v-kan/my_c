@@ -16,8 +16,8 @@ int main()
   {
      for(i = 0; i < M; i++)
     {
-        a[i][j] = rand()%100;
-        if (min>=a[i][j])
+        a[i][j] = rand()%1000;
+        if (min>a[i][j])
             min=a[i][j];
     }
     b[j]=min;
