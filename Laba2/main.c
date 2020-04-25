@@ -8,7 +8,6 @@ struct list {
     struct list *ptr;
 };
 
-
 struct list* init(int a)
 {
     struct list* head = (struct list*)malloc(sizeof(struct list));
@@ -38,14 +37,13 @@ struct list* add(struct list* head, int data)
     return (temp);
 }
 
-void remove_last(struct list* head) {
+void remove_last(struct list* head)
+{
     if (head->ptr == NULL)
         free(head);
-
     struct list *current = head;
     while (current->ptr->ptr != NULL)
         current = current->ptr;
-
     free(current->ptr);
     current->ptr = NULL;
 }
@@ -56,7 +54,6 @@ struct list *destroyListRecursive(struct list * head)
         destroyListRecursive(head->ptr);
         free(head);
     }
-
     return NULL;
 }
 
@@ -68,13 +65,10 @@ int searchElement(struct list *head, int value)
     }
     if( head->ptr == NULL)
         return (head->field == value) ? 0: -1;
-
     struct list *current = head;
-    do {
+    for (; current !=NULL; current = current->ptr)
         if( current->field == value )
             return 0;
-        current = current->ptr;
-    } while( current != NULL );
     return -1;
 };
 
