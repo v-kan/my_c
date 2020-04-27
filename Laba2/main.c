@@ -78,6 +78,7 @@ int main()
 struct list* head;
 int a;
 struct  list* p1 = (struct list*)malloc(sizeof(struct list));
+p1->field = NULL;
 
 printf( "\nMenu\n" );
 printf( "1. Create the first element of the list\n" );
@@ -98,13 +99,17 @@ switch (input) {
         scanf("%d", &a);
         head = p1 = init(a);
         head = p1;
+        listprint(head);
+        putchar('\n');
         break;
     case 2: /* Add a new element to the end of the list*/
         printf("Add a value: ");
         scanf("%d", &a);
-        if (head == NULL) {
+        if (head == NULL)
+        {
             head = p1 = init(a);
             head = p1;
+            listprint(head);
         }
         else {
             p1 = add(p1, a);
