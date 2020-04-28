@@ -37,15 +37,20 @@ struct list* add(struct list* head, int data)
     return (temp);
 }
 
-void remove_last(struct list* head)
+int remove_last(struct list* head)
 {
-    if (head->ptr == NULL)
+    if (head == NULL)
+        return NULL;
+    if (head->ptr == NULL) {
         free(head);
+        return 0;
+    }
     struct list *current = head;
     while (current->ptr->ptr != NULL)
         current = current->ptr;
     free(current->ptr);
     current->ptr = NULL;
+    return 0;
 }
 
 struct list *destroyListRecursive(struct list * head)
@@ -78,6 +83,7 @@ int main()
 struct list* head;
 int a;
 struct  list* p1 = (struct list*)malloc(sizeof(struct list));
+head = NULL;
 p1->field = NULL;
 
 printf( "\nMenu\n" );
@@ -110,6 +116,7 @@ switch (input) {
             head = p1 = init(a);
             head = p1;
             listprint(head);
+            putchar('\n');
         }
         else {
             p1 = add(p1, a);
